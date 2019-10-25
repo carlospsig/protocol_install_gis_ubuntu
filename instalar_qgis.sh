@@ -1,34 +1,32 @@
-## Pasos per instal·lar QGIS distribució Ubuntu
+## Steps to install QGIS for Ubuntu
 
-## Si tenim Ubuntu 14.04 (LTS) trusty
-
-## Primero editar los repositorios:
+## 1st step - Edit repository:
 sudo gedit /etc/apt/sources.list
 
-## QGIS for testing for Ubuntu 14.04 LTS
-deb      http://qgis.org/debian-nightly trusty main
-deb-src  http://qgis.org/debian-nightly trusty main
+## Add the next news lines (option A o B)
 
-## QGIS Release with ubuntugis dependencies for Ubuntu 14.04 LTS
-deb	     http://qgis.org/ubuntugis trusty main
-deb-src  http://qgis.org/ubuntugis trusty main
+## To know your codename
+lsb_release -cd
 
-## Primero desinstalar si tenemos instalado otra versión de ubuntu (12.04 precise, 15.05 vivid)
-## Esto pasará si hacemos una actualización completa
+replace your codename 
+
+## OPTION A -- QGIS for testing for Ubuntu
+deb     http://qgis.org/debian-nightly-release codename main
+deb-src http://qgis.org/debian-nightly-release codename main
+
+## OPTION B - QGIS Release with ubuntugis dependencies for Ubuntu
+deb	     http://qgis.org/ubuntugis codename main
+deb-src  http://qgis.org/ubuntugis codename main
+
+## Update paquets
 sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get upgrade
 
-## Desinstalamos QGIS
+## Uninstall QGIS
 sudo apt-get remove qgis python-qgis
 sudo apt-get purge qgis python-qgis
 
-## Después actualizar paquetes
+## Update paquetes
 sudo apt-get update
 
-## Seguidamente instal·lar qgis
-sudo apt-get install qgis python-qgis
-
-## with grass
-sudo apt-get install qgis python-qgis qgis-plugin-grass
-
+## Install QGIS full (saga, grass, python-qgis, etc.)
+sudo apt-get install -y qgis saga grass python-qgis qgis-plugin-grass grass-doc
