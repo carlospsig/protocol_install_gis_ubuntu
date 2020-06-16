@@ -1,6 +1,8 @@
 #!/bin/bash
 
-##### Add Key to /etc/apt/sources.list.d/pgdg.list. 
+##### Add Key to /etc/apt/sources.list.d/pgdg.list
+sudo nano /etc/apt/sources.list.d/pgdg.list
+## Add new line to add this repository
 deb http://apt.postgresql.org/pub/repos/apt bionic-pgdg main
 ##
 sudo apt-get install curl ca-certificates gnupg
@@ -41,7 +43,7 @@ CREATE EXTENSION pgrouting;
 \q  # To exit the postgres console, the exit command also works
 
 # Optionally you can leave a new database created
-CREATE DATABASE gis_ctbb TEMPLATE postgres OWNER gisadmin;
+CREATE DATABASE gis_curso TEMPLATE postgres OWNER gisadmin;
 
 
 
