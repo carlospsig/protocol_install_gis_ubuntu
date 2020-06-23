@@ -1,4 +1,3 @@
-#!/bin/bash
 
 ##### Add Key to /etc/apt/sources.list.d/pgdg.list
 sudo nano /etc/apt/sources.list.d/pgdg.list
@@ -17,13 +16,13 @@ sudo apt-get install -y postgresql-10 postgresql-contrib postgresql-10-postgis-2
 sudo nano /etc/postgresql/10/main/postgresql.conf
 # or sudo gedit /etc/postgresql/10/main/postgresql.conf
 ## uncomment the next line
-listen_addresses = '*'
+   listen_addresses = '*'
 # exit and save
 
 sudo nano /etc/postgresql/10/main/pg_hba.conf
 # or sudo gedit /etc/postgresql/10/main/pg_hba.conf
 ## Add new line to open all IP to acces to data base
-host     all     all        0.0.0.0/0      md5
+   host     all     all        0.0.0.0/0      md5
 # exit and save
 
 # You have to restart the postgresql service to see the configuration changes
