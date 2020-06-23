@@ -8,9 +8,9 @@ sudo gedit /etc/apt/sources.list
 ## To know your codename
 lsb_release -cd
 
-replace your codename 
+## replace your codename 
 
-## OPTION A -- QGIS for testing for Ubuntu
+## OPTION A -- QGIS for testing for Ubuntu   -- dayly update
 deb     http://qgis.org/debian-nightly-release codename main
 deb-src http://qgis.org/debian-nightly-release codename main
 
@@ -18,14 +18,14 @@ deb-src http://qgis.org/debian-nightly-release codename main
 deb	     http://qgis.org/ubuntugis codename main
 deb-src  http://qgis.org/ubuntugis codename main
 
-## Update paquets
+## Update packages
 sudo apt-get update
 
-## Uninstall QGIS
+## Uninstall QGIS - only if you have old install
 sudo apt-get remove qgis python-qgis
-sudo apt-get purge qgis python-qgis
+sudo apt-get autoremove
 
-## Update paquetes
+## Update packages
 sudo apt-get update
 
 ## Install QGIS full (saga, grass, python-qgis, etc.)
