@@ -15,8 +15,8 @@ deb     http://qgis.org/debian-nightly-release codename main
 deb-src http://qgis.org/debian-nightly-release codename main
 
 ## OPTION B - QGIS Release with ubuntugis dependencies for Ubuntu
-deb	     http://qgis.org/ubuntugis codename main
-deb-src  http://qgis.org/ubuntugis codename main
+deb	      http://qgis.org/ubuntugis codename main
+deb-src   http://qgis.org/ubuntugis codename main
 
 ## Update packages
 sudo apt-get update
