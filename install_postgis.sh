@@ -46,4 +46,4 @@ CREATE DATABASE gis_curso TEMPLATE postgres OWNER gisadmin;
 
 # Run the following command on Linux to see open ports:
 sudo lsof -i -P -n | grep LISTEN
-
+sudo lsof -i:5432 ## see a specific port such as 5432 ##
