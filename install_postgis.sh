@@ -44,6 +44,6 @@ CREATE EXTENSION pgrouting;
 # Optionally you can leave a new database created
 CREATE DATABASE gis_curso TEMPLATE postgres OWNER gisadmin;
 
-
-
+# Run the following command on Linux to see open ports:
+sudo lsof -i -P -n | grep LISTEN
 
