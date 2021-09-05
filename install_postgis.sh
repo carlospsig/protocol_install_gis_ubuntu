@@ -1,14 +1,13 @@
 
-##### Add Key to /etc/apt/sources.list.d/pgdg.list
-sudo nano /etc/apt/sources.list.d/pgdg.list
-## Add new line to add this repository
-deb http://apt.postgresql.org/pub/repos/apt bionic-pgdg main
-##
-sudo apt-get install curl ca-certificates gnupg
-curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+##### Add new repository
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+#### Sign the Public Key
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7FCC7D46ACCC4CF8
+
+#### Update the repositories
+sudo apt-get update
 
 ###### PostgresSQL, PostGIS, pgRouting & pgAdmin For PostgreSQL 10 PostGIS 2.5
-sudo apt-get update
 ## To install PostgreSQL 10
 sudo apt-get install -y postgresql-10 postgresql-contrib postgresql-10-postgis-2.5 postgresql-10-postgis-2.5-scripts postgresql-10-pgrouting pgadmin4
 ## To install PostgreSQL 13
@@ -24,7 +23,7 @@ listen_addresses = '*'
 
 sudo nano /etc/postgresql/13/main/pg_hba.conf
 # or sudo gedit /etc/postgresql/10/main/pg_hba.conf
-## Add new line to open all IP to acces to data base
+## Add new line at the last line, to open all IP to acces to data base
 host     all     all        0.0.0.0/0      md5
 # exit and save
 
