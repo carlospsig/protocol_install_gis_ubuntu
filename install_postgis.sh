@@ -10,21 +10,21 @@ sudo apt-get update
 ###### PostgresSQL, PostGIS, pgRouting & pgAdmin For PostgreSQL 10 PostGIS 2.5
 ## To install PostgreSQL 10
 sudo apt-get install -y postgresql-10 postgresql-contrib postgresql-10-postgis-2.5 postgresql-10-postgis-2.5-scripts postgresql-10-pgrouting pgadmin4
-## To install PostgreSQL 13
-sudo apt-get install -y postgresql-13 postgresql-contrib postgresql-13-postgis-3 postgresql-13-postgis-3-scripts postgresql-13-pgrouting
+## To install PostgreSQL 14
+sudo apt-get install -y postgresql-14 postgresql-contrib postgresql-14-postgis-3 postgresql-14-postgis-3-scripts postgresql-14-pgrouting
 
 ###### Setting postgreSQL, edit the files pg_hba.conf & postgresql.conf
 
-sudo nano /etc/postgresql/13/main/postgresql.conf
+sudo nano /etc/postgresql/14/main/postgresql.conf
 # or sudo gedit /etc/postgresql/10/main/postgresql.conf
 ## uncomment the next line
 listen_addresses = '*'
 # exit and save
 
-sudo nano /etc/postgresql/13/main/pg_hba.conf
+sudo nano /etc/postgresql/14/main/pg_hba.conf
 # or sudo gedit /etc/postgresql/10/main/pg_hba.conf
 ## Add new line at the last line, to open all IP to acces to data base
-host     all     all        0.0.0.0/0      md5
+host     all     all        0.0.0.0/0      scram-sha-256
 # exit and save
 
 # You have to restart the postgresql service to see the configuration changes
