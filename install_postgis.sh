@@ -9,16 +9,16 @@ sudo apt-get update
 
 ###### PostgresSQL, PostGIS, pgRouting & pgAdmin For PostgreSQL 10 PostGIS 2.5
 ## To install PostgreSQL 15
-sudo apt-get install -y postgresql-15 postgresql-contrib postgresql-15-postgis-3 postgresql-15-postgis-3-scripts postgresql-15-pgrouting
+sudo apt-get install -y postgresql-17 postgresql-contrib postgresql-17-postgis-3 postgresql-17-postgis-3-scripts postgresql-17-pgrouting
 
 ###### Setting postgreSQL, edit the files pg_hba.conf & postgresql.conf
 
-sudo nano /etc/postgresql/15/main/postgresql.conf
+sudo nano /etc/postgresql/17/main/postgresql.conf
 ## uncomment the next line
 listen_addresses = '*'
 # exit and save
 
-sudo nano /etc/postgresql/15/main/pg_hba.conf
+sudo nano /etc/postgresql/17/main/pg_hba.conf
 ## Add new line at the last line, to open all IP to acces to data base
 host     all     all        0.0.0.0/0      scram-sha-256
 # exit and save
